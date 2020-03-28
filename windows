@@ -1,0 +1,31 @@
+#include <iostream>
+
+int main()
+{
+    //Print the "welcoming" messages to terminal
+    std::cout << "We are here to undo your mistakes";
+    std::cout << std::endl;
+    std::cout << "Submit to us and you may be set free:" << std::endl;
+
+    //Declare 3 number code
+    const int CodeA= 4;
+    const int CodeB= 9;
+    const int CodeC= 2;
+
+
+    
+    const int Codesum= CodeA + CodeB + CodeC;
+    const int CodeProduct= CodeA * CodeB * CodeC;
+
+    // Print CodeSum and CodeProduct to the terminal
+    std::cout << std::endl;
+    std::cout << "- There are three numbers in the code" << std::endl;
+    std::cout << "- The codes add up to: " << Codesum << std::endl;
+    std::cout << "- They multiply to: " << CodeProduct << std::endl;
+
+    int PlayerGuess;
+    std::cin >> PlayerGuess;
+    std::cout << "Entering: " << PlayerGuess;
+
+    return 0;
+}
