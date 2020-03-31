@@ -3,9 +3,9 @@
 int main()
 {
     //Print the "welcoming" messages to terminal
-    std::cout << "We are here to undo your mistakes";
+    std::cout << "Get what the warden wants and get home";
     std::cout << std::endl;
-    std::cout << "Submit to us and you may be set free:" << std::endl;
+    std::cout << "To disable the alarm on the door:" << std::endl;
 
     //Declare 3 number code
     const int CodeA= 4;
@@ -13,19 +13,35 @@ int main()
     const int CodeC= 2;
 
 
-    
-    const int Codesum= CodeA + CodeB + CodeC;
+
+    const int CodeSum= CodeA + CodeB + CodeC;
     const int CodeProduct= CodeA * CodeB * CodeC;
 
     // Print CodeSum and CodeProduct to the terminal
     std::cout << std::endl;
     std::cout << "- There are three numbers in the code" << std::endl;
-    std::cout << "- The codes add up to: " << Codesum << std::endl;
+    std::cout << "- The codes add up to: " << CodeSum << std::endl;
     std::cout << "- They multiply to: " << CodeProduct << std::endl;
 
-    int PlayerGuess;
-    std::cin >> PlayerGuess;
-    std::cout << "Entering: " << PlayerGuess;
+    int GuessA, GuessB, GuessC;
+    std::cin >> GuessA;
+    std::cin >> GuessB;
+    std::cin >> GuessC;
+    
+    
+    int GuessSum= GuessA + GuessB + GuessC;
+    int GuessProduct= GuessA * GuessB * GuessC;
+
+    //Determines whether player input is right or wrong.
+    if (GuessSum == CodeSum && GuessProduct == CodeProduct)
+    {
+        std::cout << "Lock Disabled";
+    }
+
+    else
+    {
+        std::cout << "ERROR: ALARM CHARGING. ALARM 25% ACTIVE";
+    }
 
     return 0;
 }
