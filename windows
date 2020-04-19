@@ -1,16 +1,18 @@
 #include <iostream>
 
-void PrintIntroduction()
+void PrintIntroduction(int Difficulty)
 {
 //Print the "welcoming" messages to terminal
     std::cout << std::endl;
-    std::cout << "Get what the warden wants and get home.";
+    std::cout << "Get what the warden wants and get home. \nWARNING: SECURITY LEVEL " << Difficulty << " DOOR ALARM.";
     std::cout << std::endl;
-    std::cout << "To disable the alarm on the door:\n";
+    std::cout << "\nTo disable the alarm on the door:\n";
 }
 
-void PlayGame()
+bool PlayGame(int Difficulty)
 {
+    PrintIntroduction(Difficulty);
+
     //Declare 3 number code
     const int CodeA= 4;
     const int CodeB= 9;
@@ -23,7 +25,7 @@ void PlayGame()
 
     // Print CodeSum and CodeProduct to the terminal
     std::cout << std::endl;
-    std::cout << "- There are three numbers in the code\n";
+    std::cout << "\n- There are three numbers in the code\n";
     std::cout << "- The codes add up to: " << CodeSum << std::endl;
     std::cout << "- They multiply to: " << CodeProduct << std::endl;
     std::cout << std::endl;
@@ -39,16 +41,30 @@ void PlayGame()
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
         std::cout << "\nLock Disabled";
-    }
+        return true;
+    }   
     else
     {
         std::cout << "\nERROR: ARMING ALARM. ALARM 25% ACTIVE";
+        return false;
     }
 }
 
 int main()
 {
-    PrintIntroduction();
-    PlayGame();
+    int LevelDifficulty = 1;
+    while(true)
+    {
+        bool lock1disabled = PlayGame(LevelDifficulty);
+        std::cin.clear();  //Clears any errors
+        std::cin.ignore(); //Discards the buffer
+
+        if (lock1disabled)  
+        {
+            ++LevelDifficulty;
+        }
+        
+
+    }
     return 0;
 }
