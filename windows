@@ -14,9 +14,9 @@ bool PlayGame(int Difficulty)
     PrintIntroduction(Difficulty);
 
     //Declare 3 number code
-    const int CodeA= 4;
-    const int CodeB= 9;
-    const int CodeC= 2;
+    const int CodeA= rand();
+    const int CodeB= rand();
+    const int CodeC= rand();
 
 
 
@@ -51,9 +51,11 @@ bool PlayGame(int Difficulty)
 }
 
 int main()
-{
+{ 
     int LevelDifficulty = 1;
-    while(true)
+    int const MaxDifficulty = 5;
+
+    while (LevelDifficulty <= MaxDifficulty) // Loop game untill all levels completed
     {
         bool lock1disabled = PlayGame(LevelDifficulty);
         std::cin.clear();  //Clears any errors
@@ -61,10 +63,11 @@ int main()
 
         if (lock1disabled)  
         {
-            ++LevelDifficulty;
+            ++LevelDifficulty; //increases level difficulty
         }
         
 
     }
+    std::cout << "\n Alarm disabled. Be careful. Sleepers...\n";
     return 0;
 }
