@@ -1,0 +1,18 @@
+# install curl, python, and nano
+yum install -y curl python3 nano docker git vim
+
+# check version of git
+git --version
+
+# config git (use your username and email)
+git config --global user.name "Th3_Alg0n"
+git config --global user.email "alnguyen.2583@gmail.com"
+
+# curl gitlab-runner packages
+curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh | bash
+
+# install gitlab-runner
+yum install -y gitlab-runner
+
+# gitlab-runner status check
+service -y gitlab-runner status
