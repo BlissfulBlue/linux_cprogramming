@@ -1,8 +1,8 @@
-# install pre-requisite for ./jq
-yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-
 # install curl, python, and nano
 yum install -y curl python3 nano docker git vim jq
+
+# install pre-requisite for ./jq
+yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 # check jq version
 jq -Version
