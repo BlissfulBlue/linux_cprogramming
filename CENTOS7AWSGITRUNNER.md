@@ -5,7 +5,8 @@
 ```4. Have AWS access key and secret access key ready.```
 ```5. Go to https://aws.amazon.com/ and create a rsa .pem keypair and download it.```
 
-## Step 1: Install git
+## Step 1:  Install git
+
 ```sudo yum install git```
 ```git --version```
 
@@ -33,7 +34,7 @@
 ```ls -la```
 ```bash step3defineaws.sh```
 
-## step 7: Create private key file
+## Step 7: Create private key file
 ```Have your private key on notepad open and ready```
 ```touch KEYNAME.pem```
 ```nano KEYNAME.pem```
@@ -42,10 +43,11 @@
 
 ## Step 8: Launch instances (install gitlab server and runner)
 ```ls -la```
-```bash step4all KEYNAME.pem```
-```Follow the gitlab website with http://ip.address.here echoed on the screen. Username is root. Copy the password given to log in.```
+```bash step4all.sh KEYNAME.pem```
+```Follow the gitlab website with http://ip.address.here echoed on the screen (underneath password). Username is root. Copy the password given to log in.```
 ```When logged in, create a blank project.```
 ```Type exit to continue. This will install gitlab runner on another insatnce.```
+```NOTE: If the Provision files ever freeze for longer than 5 minutes on one line, ctrl C to cancel and try rerunning the script. (bash Provision.sh)```
 
 ## Step 9: Register Runner
 ```sudo gitlab-register runner```
