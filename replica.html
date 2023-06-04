@@ -47,6 +47,7 @@
       display: none;  /* Hide image cause tag not needed */
     }
 
+    /* light blue rectangle */
     .navrect {
       background-color: lightblue;
       width: 200px;
@@ -55,12 +56,37 @@
       top: 0;
       left: 0;
       z-index: -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* find out what justify-content property is */
+    }
+
+    /* button inside light blue rectangle under bernie */
+    .navrect button {
+      width: 100%;
+      padding: 5px;
+      border: none;
+      background-color: #555;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 5px;
+      margin: 2px 0; /* find out what the 0 does*/
+    }
+
+    /* hover mouse on button changes color */
+    .navrect button:hover {
+      background-color: #333;
     }
   </style>
 </head>
 <!-- Body Begins -->
 <body>
-  <div class="navrect"></div>
+  <div class="navrect">
+    <button>Putin's OnlyFans</button>
+    <button>Mr. September Himself</button>
+    <button>Barak Baboon 'bama</button>
+  </div>
 
   <h1>Biden Blast!</h1>
 
